@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-12 border">
+            <p>{{ game.username }}</p>
+            {% if game.cheatmode %}
+            <p>{{game.code}}</p>
+            {% endif %}
+
+        </div>
+        <div>
+            <table>
+                <th>
+                    <tr>
+                        <td>ronde</td>
+                        <td>code</td>
+                        <td>wit</td>
+                        <td>zwart</td>
+                    </tr>
+                </th>
+                {%for i in range(0, game.turns|length) %}
+                <tr>
+                    <td>{{i+1}}</td>
+                    <td>{{game.turns[i][0]}}</td>
+                    <td>{{game.turns[i][1]}}</td>
+                    <td>{{game.turns[i][2]}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+        <form action="{{ url_for()}}" method="POST">
+            <input type="hidden" name="game" value="{{game}}">
+            <input type="text">
+            <button type="submit">submit</button>
+        </form>
+
+    </div>
+
+{% endblock %}

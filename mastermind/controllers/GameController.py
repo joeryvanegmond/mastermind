@@ -1,15 +1,16 @@
 import random
+from flask import Flask, render_template
 
-
-class GameController:
-    def __init__(self, username, size, maxvalue, doubles):
+class gameController:
+    def __init__(self, username, size, maxvalue, doubles, cheatmode):
         self.username = username
         self.size = size
         self.code = self.generatecode(maxvalue, doubles)
         self.roundcounter = 0
         self.blackpins = 0
         self.whitepins = 0
-        self.processanwser(input())
+        self.cheatmode = cheatmode
+        self.turns = []
 
     def generatecode(self, maxvalue, doubles):
         possibleValues = []
@@ -57,8 +58,10 @@ class GameController:
                             break
                         z += 1
                 y += 1
+            self.turns.append([anwserlong, self.blackpins, self.whitepins])
             self.nextround()
         else:
+            self.turns.append([anwserlong, self.blackpins, self.whitepins])
             self.victory()
 
     def victory(self):
