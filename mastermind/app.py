@@ -1,11 +1,8 @@
-from flask import Flask, render_template, session
+from flask import Flask, render_template, session, request, redirect
 from MysqlConnection import db_connection
 
 app = Flask(__name__)
-
-
-
-
+app.config['SECRET_KEY'] = 'prettyprinted'
 
 @app.route('/')
 def home():
@@ -18,13 +15,17 @@ def stats():
 @app.route('/start')
 def start():
 
-    return render_template('start.html')
+    return render_template('login.html')
 
-@app.route('/handle_username', methods=['POST'])
-def handle_username():
-    projectpath = request.form['projectFilepath']
-    # do something with incoming data
-    return render_template('home.html')
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    name = request.form['name']
+    db_connection.query('INSERT INTO stats VALUES(null, ?, null, null, null)', [name])
+
+    return render_template('home.html', name=name)
+
+
+
 
 
 if __name__ == '__main__':

@@ -98,7 +98,7 @@
       <workItem from="1585658171585" duration="7329000" />
       <workItem from="1585811780302" duration="325000" />
       <workItem from="1585812130461" duration="4201000" />
-      <workItem from="1585818262924" duration="4438000" />
+      <workItem from="1585818262924" duration="12769000" />
     </task>
     <servers />
   </component>
@@ -114,38 +114,62 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="713" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585815473491" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585839476206">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585839476206" />
     <state x="740" y="246" key="FileChooserDialogImpl" timestamp="1585818833813">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="246" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585818833813" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1585816334377">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1585834107524">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585816334377" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1585816334377">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585834107524" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1585834107524">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585816334377" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1585816334377">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585834107524" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1585834107524">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585816334377" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1585816334377">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585834107524" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1585834107524">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585816334377" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585834107524" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585833768992">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585833768992" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585833768992">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585833768992" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585833768992">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585833768992" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585833768992">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585833768992" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1585818708029">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1585818708029" />
+    <state x="859" y="410" width="326" height="234" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1585828044885">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="859" y="410" width="326" height="234" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1040@0.0.1920.1040" timestamp="1585828044885" />
     <state x="690" y="325" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1585820518775">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="325" key="com.intellij.database.dbimport.ImportUtil.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585820518775" />
-    <state x="676" y="161" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1585820430893">
+    <state x="676" y="161" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1585828073736">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="676" y="161" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585820430893" />
+    <state x="676" y="161" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585828073736" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585658191776">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -154,12 +178,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585815421608" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585813782333">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585834244435">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585813782333" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585834244435" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/mastermind$mastermind.coverage" NAME="mastermind Coverage Results" MODIFIED="1585814198869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mastermind$mastermind.coverage" NAME="mastermind Coverage Results" MODIFIED="1585833768979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
