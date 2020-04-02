@@ -1,10 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+    <div class="h1">
+        Start
+    </div>
     <div class="row">
-        <div class="col-12 border">
-          <div class="btn btn-success btn-sm"> super kuuuuttt </div>
+        <div class="col-12 d-flex justify-content-center">
+            <form action="{{ url_for('handle_username') }}" method="post" class="d-flex flex-column col-sm-3">
+                <label for="name">Nickname</label>
+                <input type="text" placeholder="janjoker" name="name" class="form-control">
+                <input type="submit" class="btn btn-success" value="Start">
+            </form>
         </div>
     </div>
 
