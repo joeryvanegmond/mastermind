@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="h1">
+        Start
+    </div>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <form action="{{ url_for('login') }}" method="post" class="d-flex flex-column col-sm-3">
+                <label for="name">Voer naam in</label>
+                <input type="text" placeholder="nickname" name="name" class="form-control">
+                <input type="submit" class="btn btn-success" value="start">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
