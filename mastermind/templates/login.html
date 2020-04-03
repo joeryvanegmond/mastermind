@@ -4,6 +4,13 @@
     <div class="h1">
         Start
     </div>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <h3>{{ message }}</h3>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
             <form action="{{ url_for('login') }}" method="post" class="d-flex flex-column col-sm-3">
@@ -41,7 +48,6 @@
                           <option value="10">10</option>
                     </select>
                 </div>
-
 
                 <input type="submit" class="btn btn-success" value="start">
             </form>

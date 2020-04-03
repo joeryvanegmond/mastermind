@@ -1,5 +1,5 @@
 from .controllers.GameController import gameController
-from flask import Flask, render_template, session, request, redirect, url_for, Response
+from flask import Flask, render_template, session, request, redirect, url_for, flash
 from .MysqlConnection import db_connection
 
 app = Flask(__name__)
@@ -19,6 +19,11 @@ def start():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if not request.form['allowdouble']:
+        if request.form['positions'] > request.form['colors']:
+            flash('kan geen spel creeëren met deze instellingen, verhoog het aantal mogelijke waardes, verlaag de lengte van de code, of schakel dubbelen waardes in.')
+            return redirect(url_for('start'))
+
     session.clear()
     session['username'] = request.form['name']
     session['size'] = int(request.form['positions'])
@@ -32,23 +37,18 @@ def login():
 @app.route('/game', methods=['GET', 'POST'])
 def run_game():
     if session['code'] == 0:
-        print("1")
         controller = gameController(session['username'], int(session['size']), session['cheatmode'], round=0)
         session['code'] = controller.generatecode(int(session['maxvalue']), int(session['doubles']))
         session['round'] = 0
         session['stats'] = []
         return render_template('game.html')
     else:
-        print("2")
         controller = gameController(session['username'], int(session['size']), session['cheatmode'], int(session['round']))
         controller.set_code(session['code'])
-        print("2.5")
         if controller.processanwser(session['anwser']):
-            print("3")
             session['stats'].append(controller.turns)
             session['round'] += 1
             return redirect(url_for('victory'))
-        print("4")
         session['stats'].append(controller.turns)
         session['round'] += 1
         return render_template('game.html')
