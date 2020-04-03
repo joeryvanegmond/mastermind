@@ -19,24 +19,28 @@ def start():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    name = request.form['name']
-    db_connection.query('INSERT INTO stats VALUES(null, ?, null, null, null)', [name])
-
-    return render_template('home.html', name=name)
+    session.clear()
+    session['username'] = request.form['name']
+    session['size'] = int(request.form['positions'])
+    session['cheatmode'] = True
+    session['maxvalue'] = int(request.form['colors'])
+    session['doubles'] = False
+    session['code'] = 0
+    return redirect(url_for('run_game'))
 
 
 @app.route('/game', methods=['GET', 'POST'])
 def run_game():
     if session['code'] == 0:
         print("1")
-        controller = gameController(session['username'], session['size'], session['cheatmode'], round=0)
-        session['code'] = controller.generatecode(session['maxvalue'], session['doubles'])
+        controller = gameController(session['username'], int(session['size']), session['cheatmode'], round=0)
+        session['code'] = controller.generatecode(int(session['maxvalue']), int(session['doubles']))
         session['round'] = 0
         session['stats'] = []
         return render_template('game.html')
     else:
         print("2")
-        controller = gameController(session['username'], session['size'], session['cheatmode'], session['round'])
+        controller = gameController(session['username'], int(session['size']), session['cheatmode'], int(session['round']))
         controller.set_code(session['code'])
         print("2.5")
         if controller.processanwser(session['anwser']):
@@ -60,7 +64,7 @@ def test():
     session.clear()
     session['username'] = "Hans"
     session['size'] = 5
-    session['cheatmode'] = False
+    session['cheatmode'] = True
     session['maxvalue'] = 5
     session['doubles'] = True
     session['code'] = 0
@@ -68,6 +72,7 @@ def test():
 
 @app.route('/victory')
 def victory():
+    # db_connection.query("INSERT INTO stats VALUES()")
     return render_template('victory.html')
 
 if __name__ == '__main__':
