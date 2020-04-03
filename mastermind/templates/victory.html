@@ -1,5 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>gefeliciteerd</h2>
+    <div class="row ">
+        <div class="col-sm-12 d-flex flex-column">
+                <div class="h1">
+                    {{ name }}, je hebt gewonnen!
+                </div>
+            <span>
+                Je deed er {{ round }}x over om de code te raden.
+            </span>
+            <span>
+                <a class="btn btn-warning btn-sm mt-4" href="/start">nog een keer</a>
+            </span>
+
+            <span>
+                <a class="btn btn-success btn-sm mt-4" href="/stats">Scoreboard</a>
+            </span>
+
+        </div>
+    </div>
 {% endblock %}

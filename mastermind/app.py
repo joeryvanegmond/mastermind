@@ -1,6 +1,7 @@
 from .controllers.GameController import gameController
 from flask import Flask, render_template, session, request, redirect, url_for, Response
 from .MysqlConnection import db_connection
+from datetime import datetime
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'prettyprinted'
@@ -22,9 +23,9 @@ def login():
     session.clear()
     session['username'] = request.form['name']
     session['size'] = int(request.form['positions'])
-    session['cheatmode'] = True
+    session['cheatmode'] = request.form.get('cheatmode')
     session['maxvalue'] = int(request.form['colors'])
-    session['doubles'] = False
+    session['doubles'] = request.form.get('allowdouble')
     session['code'] = 0
     return redirect(url_for('run_game'))
 
@@ -34,7 +35,7 @@ def run_game():
     if session['code'] == 0:
         print("1")
         controller = gameController(session['username'], int(session['size']), session['cheatmode'], round=0)
-        session['code'] = controller.generatecode(int(session['maxvalue']), int(session['doubles']))
+        session['code'] = controller.generatecode(int(session['maxvalue']), session['doubles'])
         session['round'] = 0
         session['stats'] = []
         return render_template('game.html')
@@ -72,8 +73,10 @@ def test():
 
 @app.route('/victory')
 def victory():
-    # db_connection.query("INSERT INTO stats VALUES()")
-    return render_template('victory.html')
+    sql = "INSERT INTO stats (name, playtime, rounds, cheatmode) VALUES(?, ?, ?,?)"
+    val = (session['username'], datetime.now(), session['round'], session['cheatmode'])
+    db_connection.query(sql, val)
+    return render_template('victory.html', name=session['username'], round=session['round'])
 
 if __name__ == '__main__':
     app.run()
