@@ -12,6 +12,8 @@ def home():
 
 @app.route('/stats')
 def stats():
+    sql = "SELECT * FROM stats"
+    return str(db_connection.query(sql))
     return render_template('stats.html')
 
 @app.route('/start')
@@ -20,7 +22,7 @@ def start():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if not request.form['allowdouble']:
+    if request.form.get('allowdouble') is None:
         if request.form['positions'] > request.form['colors']:
             flash('kan geen spel creeëren met deze instellingen, verhoog het aantal mogelijke waardes, verlaag de lengte van de code, of schakel dubbelen waardes in.')
             return redirect(url_for('start'))

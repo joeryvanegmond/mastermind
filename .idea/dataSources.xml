@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="database" uuid="f74e63f7-ea4f-4a66-8e6f-89432af9c9e7">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\rensa\Desktop\school\Blok_7\Python\mastermind\mastermind\database.db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="database [2]" uuid="dfd2e8ae-e8f6-4ec7-90a3-c28f9e490554">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\rensa\Desktop\school\Blok_7\Python\mastermind\database.db</jdbc-url>
+    </data-source>
+  </component>
+</project>
