@@ -5,8 +5,27 @@
         Statistieken
     </div>
     <div class="row">
-        <div class="col-12 border">
-{#            {{data[0]}}#}
+        <div class="col-sm-12 bg-dark">
+            <table class="table table-borderless text-white">>
+                <th>Speler</th>
+                <th>tijd</th>
+                <th>rondes</th>
+                <th>cheatmode</th>
+                {% for record in data %}
+                    <tr>
+                        <td>{{record[1]}}</td>
+                        <td>{{record[2]|datetimeformat}}</td>
+                        <td>{{record[3]}}</td>
+                        <td>
+                            {% if record[4]==None %}
+                                Niet gebruikt
+                            {% else %}
+                               <img src="https://vignette.wikia.nocookie.net/meme/images/0/0e/5D33E972-90B1-416F-9212-18D78953AFD4.png/revision/latest/window-crop/width/200/x-offset/0/y-offset/0/window-width/257/window-height/256?cb=20180217195703" class="">
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
         </div>
     </div>
 

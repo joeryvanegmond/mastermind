@@ -8,6 +8,13 @@
             {% if session['cheatmode'] %}
             <p class="text-success">cheatmode aan: {{ session['code'] }}</p>
             {% endif %}
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  <h4>{{ message }}</h4>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
         </div>
 
         <div class="col-sm-12 bg-dark">

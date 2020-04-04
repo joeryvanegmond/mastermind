@@ -6,15 +6,16 @@ from datetime import datetime
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'prettyprinted'
 
+
 @app.route('/')
 def home():
     return render_template('home.html')
 
 @app.route('/stats')
 def stats():
-    sql = "SELECT * FROM stats"
-    return str(db_connection.query(sql))
-    return render_template('stats.html')
+    sql = "SELECT * FROM stats ORDER BY cheatmode, rounds ASC"
+    data = db_connection.select_query(sql)
+    return render_template('stats.html', data=data)
 
 @app.route('/start')
 def start():
@@ -59,8 +60,14 @@ def run_game():
 
 @app.route('/update-game', methods=['GET', 'POST'])
 def update_game():
-    session['anwser'] = request.form['anwser']
-    return redirect(url_for('run_game'))
+    if len(request.form['anwser']) == session['size']:
+        session['anwser'] = request.form['anwser']
+        return redirect(url_for('run_game'))
+    else:
+        flash('zorg ervoor dat je code ' + str(session['size']) + ' lang is!')
+        return render_template('game.html')
+
+
 
 @app.route('/test')
 def test():
@@ -79,6 +86,12 @@ def victory():
     val = (session['username'], datetime.now(), session['round'], session['cheatmode'])
     db_connection.query(sql, val)
     return render_template('victory.html', name=session['username'], round=session['round'])
+
+@app.template_filter('datetimeformat')
+def datetimeformat(value):
+    datetime_obj = datetime.strptime(value, "%Y-%m-%d %H:%M:%S.%f")
+    return datetime_obj.strftime("%d-%m-%Y %H:%M")
+
 
 if __name__ == '__main__':
     app.run()
