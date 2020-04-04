@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
     <div class="h1">
         Start
     </div>
@@ -21,7 +22,7 @@
 
 
                 <div class="form-group">
-                    <input class="" type="checkbox" name="allowdouble" data-toggle="toggle">
+                    <input type="checkbox" name="allowdouble" data-toggle="toggle">
                     <label for="allowdouble">Dubbele kleuren toestaan</label>
                 </div>
 
@@ -47,6 +48,11 @@
                           <option value="9">9</option>
                           <option value="10">10</option>
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" name="cheatmode" data-toggle="toggle">
+                    <label for="cheatmode">Cheatemode</label>
                 </div>
 
                 <input type="submit" class="btn btn-success" value="start">

@@ -29,3 +29,11 @@ class db_connection:
             cursor.execute(query)
         conn.commit()
         conn.close()
+
+    @staticmethod
+    def insert(query: str, val: str):
+        conn = sqlite3.connect(os.path.join(path, db_name))
+        cursor = conn.cursor()
+        cursor.execute(query, val)
+        conn.commit()
+        conn.close()

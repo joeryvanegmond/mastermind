@@ -2,38 +2,39 @@
 
 {% block content %}
 
-    <div class="row">
-        <div class="col-12 border">
-            <p>{{ session['username'] }}</p>
+    <div class="row mb-5">
+        <div class="col-sm-12">
+            <div class="h1">{{ session['username'] }}</div>
             {% if session['cheatmode'] %}
-            <p>{{ session['code'] }}</p>
+            <p class="text-success">cheatmode aan: {{ session['code'] }}</p>
             {% endif %}
-
         </div>
+
+        <div class="col-sm-12 bg-dark">
+            <table class="table table-borderless text-white">
+                <tr>
+                    <th>ronde</th>
+                    <th>code</th>
+                    <th>zwart</th>
+                    <th>wit</th>
+                </tr>
+                {%for i in range(0, session['stats']|length) %}
+                <tr>
+                    <td>{{i+1}}</td>
+                    <td>{{session['stats'][i][0]}}</td>
+                    <td>{{session['stats'][i][1]}}</td>
+                    <td>{{session['stats'][i][2]}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+
+        <form class="col-sm-12 d-flex justify-content-center flex-column mt-4" action="{{ url_for('update_game')}}" method="POST">
+            <label for="answer">Voer code in</label>
+            <input type="number" placeholder="druk op enter" name="anwser">
+        </form>
     </div>
 
-    <div>
-        <table>
-            <th>
-                <tr>
-                    <td>ronde</td>
-                    <td>code</td>
-                    <td>zwart</td>
-                    <td>wit</td>
-                </tr>
-            </th>
-            {%for i in range(0, session['stats']|length) %}
-            <tr>
-                <td>{{i+1}}</td>
-                <td>{{session['stats'][i][0]}}</td>
-                <td>{{session['stats'][i][1]}}</td>
-                <td>{{session['stats'][i][2]}}</td>
-            </tr>
-            {%endfor%}
-        </table>
-        </div>
-        <form action="{{ url_for('update_game')}}" method="POST">
-            <input type="number" name="anwser">
-        </form>
+
 
 {% endblock %}
