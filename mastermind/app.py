@@ -67,19 +67,6 @@ def update_game():
         flash('zorg ervoor dat je code ' + str(session['size']) + ' lang is!')
         return render_template('game.html')
 
-
-
-@app.route('/test')
-def test():
-    session.clear()
-    session['username'] = "Hans"
-    session['size'] = 5
-    session['cheatmode'] = True
-    session['maxvalue'] = 5
-    session['doubles'] = True
-    session['code'] = 0
-    return redirect(url_for('run_game'))
-
 @app.route('/victory')
 def victory():
     sql = "INSERT INTO stats (name, playtime, rounds, cheatmode) VALUES(?, ?, ?,?)"
