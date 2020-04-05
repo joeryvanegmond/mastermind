@@ -23,10 +23,10 @@ def start():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if request.form.get('allowdouble') is None:
+    if request.form.get('allowdouble') == None:
         if request.form['positions'] > request.form['colors']:
             flash('kan geen spel creeëren met deze instellingen, verhoog het aantal mogelijke waardes, verlaag de lengte van de code, of schakel dubbelen waardes in.')
-            return redirect(url_for('start'))
+            return render_template('login.html')
 
     session.clear()
     session['username'] = request.form['name']
